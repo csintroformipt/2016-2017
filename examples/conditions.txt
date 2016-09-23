@@ -1,0 +1,19 @@
+if (a<b) then       !long_if
+    BLOCK#1
+else
+    BLOCK2
+end if
+
+
+if (a<b) then BLOCK#1  !short_if
+
+
+select case (a)         !C_switch
+    case (VALUES1)
+        BLOCK1
+    case (VALUES2)
+        BLOCK2
+        ...
+    case default
+        BLOCK_default
+end select

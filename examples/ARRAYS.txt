@@ -1,0 +1,34 @@
+integer, dimension(9) :: ar         !declaration of array (long form)
+integer ar(9)                       !same as line 1(short form)
+integer ar(-9:0)                    !same as lines1,2 but with indexes in a range (-9...0)
+integer ar2d (10,10)                !declaration of 2D static array
+integer k
+
+real, allocatable :: dyn_array(:,:)         !declare allocatable array
+integer s1, s2
+
+ar=(/1,2,3,4,5,6,7,8,9/)            !initialize array using its constructor
+
+read (*,*) ar                       !initialize array by reading from std.in
+read (*,*) (ar(k),k=1,9)             !same as line 8
+ar=(/(i,i=1,5) (i,i=6,9)/)          !same as 9,10
+
+ar=1                                !same as ar=(/(1,i=1,9)/)
+ar=ar1+ar2                          !element-wise operations (ar(i),i=1,9)=(ar1(i),i=1,9)+(ar2(i),i=1,9)
+
+
+where (ar<0)                        !where iterator
+  ar=-ar
+elsewhere 
+  ar=ar
+end where
+
+forall (i=1:9, a(i)<0)              !forall iterator
+  a(i)=-a(i)
+end forall                        
+
+s1=10
+s2=20
+allocate (dyn_array(s1,s2))         !allocate memmory for dynamical array
+  do smthing
+deallocate (dyn_array)              !deallocate memmory for dyn_array (delete array)

@@ -1,0 +1,22 @@
+real x(100)             !initialize array for random numbers
+integer x_int(100)      !initializr array for random integers
+call random_seed()      !randomize
+call random_number(x)   !initialize x with random numbers 0<=x(i)<1
+x_int=int(11*x)         !initialize x_int with random integers {0,1,2,3,4,5,6,7,8,9,10}
+
+
+!/*CORRECT RANDOM_SEED*/
+integer :: n, un, istat
+call random_seed(size = n)
+allocate(seed(n))
+open(un, file="/dev/urandom", access="stream", &
+          form="unformatted", action="read", status="old", iostat=istat)
+ if (istat == 0) then
+    read(un) seed
+    close(un)
+else
+    write (*,*) 'canr read urandom"
+    stop 1
+end if
+
+call random_seed(put=seed)

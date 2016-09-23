@@ -1,0 +1,11 @@
+#VIM HowTo:
+
+  http://bullium.com/support/vim.html
+  https://help.ubuntu.com/community/VimHowto
+  https://www.linux.com/learn/tutorials/228600-vim-101-a-beginners-guide-to-vim
+  You may look further for how-to using GOOGLE at https://www.google.ru/search?q=vim+howto&ie=utf-8&oe=utf-8&gws_rd=cr&ei=imftVZSACoqwa-eHvrgB
+  
+  or just try typing vimtutor into the console
+
+#gfortran versions and changelog "What's new in gfortran?"
+  https://gcc.gnu.org/wiki/GFortran/News#GCC4.7

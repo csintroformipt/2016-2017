@@ -1,0 +1,6 @@
+open (1,file='filepath')            !open file
+write (1,*) SMTHING                 !write something to the file with id 1
+close (1)                           !close file
+
+
+USE GOOGLE FOR MORE INFORMATION ABOUT FORM=.... clause
